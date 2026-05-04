@@ -1,0 +1,7 @@
+.clangd
+.clang-format
+*.mk
+*.project
+*.workspace
+build/
+*.o
