@@ -1,41 +1,43 @@
 #include <stdio.h>
 #include <iostream>
 #include <vector>
+#include <chrono>
 
-
+using namespace std::chrono;
 using namespace std;
 
+void shellSort(vector<int>& arr);
+void taskOneResult(vector<int>& arr);
+void taskTwoResult(vector<int>& arr);
 
-int interpolationSearch(vector<int>& arr, int target);
-
-// data
 void printArray(const vector<int>& arr) {
     for (int num : arr)
         cout << num << " ";
     cout << endl;
 }
     
-
 vector<int> testArrayRandom;
 vector<int> testArraySorted;
 
-void insertionSort(vector<int>& arr);
-
 int main() {
-    for (int i {1}; i <= 10; i++) {
-        testArrayRandom.push_back(rand() % 20 );
-    };
-    
-    for (int i {1}; i <= 9; i++) {
-        testArraySorted.push_back(i);
-    };
-    
-    
-     printArray(testArraySorted);
-     
-     interpolationSearch(testArraySorted, 8);
-     
-     printArray(testArraySorted);
-    
-    return 0;
+for (int i = 0; i < 10000; i++) {
+    testArrayRandom.push_back(rand() % 100);
 }
+
+for (int i = 0; i < 10000; i++) {
+    testArraySorted.push_back(i);
+}
+
+//    TASK 1
+   taskOneResult(testArraySorted);
+
+// TASK 2
+    
+  taskTwoResult(testArrayRandom);
+   
+   
+   
+    
+
+    return 0;
+};
