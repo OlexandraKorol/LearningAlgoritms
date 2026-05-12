@@ -69,7 +69,7 @@ void taskTwoResult (vector<int>& arr) {
     auto time2 = duration_cast<microseconds>(stop2 - start2);
 
     cout << "Classic  Sort: " << time1.count() << " ms" << endl;
-    cout << "Knuth  Sort: " << time2.count() << " ms" << endl;
+    cout << "Knuth   Sort: " << time2.count() << " ms" << endl;
 }
 
 

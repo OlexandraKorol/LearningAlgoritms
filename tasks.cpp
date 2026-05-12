@@ -6,6 +6,10 @@
 
 using namespace std;
 
+int partition(vector<int>& arr, int low, int high);
+void insertionSortRange(vector<int>& arr, int left, int right);
+void quickSort(vector<int>& arr, int low, int high);
+
 // Task 1
 int interpolationSearch(vector<int>& arr, int target) {
   int low = 0;
@@ -107,4 +111,16 @@ void dutchFlagQuickSort(vector<int>& lst, int start_index, int end_index) {
 
 
 
-    
+// Task 4 
+
+void combinedSort(vector<int>& arr, int left, int right, int thereshold) {
+    if (right - left + 1 <= thereshold) {
+        insertionSortRange(arr, left, right);
+        return;
+    }
+
+    int pivot = partition(arr, left, right);
+
+    quickSort(arr, left, pivot - 1);
+    quickSort(arr, pivot + 1, right);
+};
