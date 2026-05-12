@@ -27,26 +27,26 @@ for (int i = 0; i < 20; i++) {
     testArrayRandom.push_back(rand() % 10);
 }
 
-//for (int i = 0; i < 10000; i++) {
-//    testArraySorted.push_back(i);
-//}
+for (int i = 0; i < 10000; i++) {
+   testArraySorted.push_back(i);
+}
 
 // TASK 1
-//   taskOneResult(testArraySorted);
+  taskOneResult(testArraySorted);
 
 // TASK 2
-//    
-//  taskTwoResult(testArrayRandom);
+   
+ taskTwoResult(testArrayRandom);
    
 // TASK 3
-//    cout << "Before sort: " << endl;
-//    printArray(testArrayRandom);
-//    
-//    dutchFlagQuickSort(testArrayRandom, 0, (testArrayRandom.size() - 1));
-//    
-//    cout << "After sort: " << endl;
-//    
-//    printArray(testArrayRandom);
+   cout << "Before sort: " << endl;
+   printArray(testArrayRandom);
+   
+   dutchFlagQuickSort(testArrayRandom, 0, (testArrayRandom.size() - 1));
+   
+   cout << "After sort: " << endl;
+   
+   printArray(testArrayRandom);
     
     
 // TASK 4
