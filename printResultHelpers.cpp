@@ -71,3 +71,5 @@ void taskTwoResult (vector<int>& arr) {
     cout << "Classic  Sort: " << time1.count() << " ms" << endl;
     cout << "Knuth  Sort: " << time2.count() << " ms" << endl;
 }
+
+

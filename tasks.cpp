@@ -59,8 +59,51 @@ void shellSortKnuth(vector<int>& arr) {
     }
 }
 
+// Task 3
 
 
+pair<int, int> dutchFlagPartitioning(vector<int>& lst, int startIndex, int lastIndex, int pivot_value) {
+    int lt = startIndex;
+    int gt = lastIndex;
+    int eq = startIndex;
+
+    while (eq <= gt) {
+
+        if (lst[eq] == pivot_value) {
+            eq += 1;
+
+        } else if (lst[eq] > pivot_value) {
+            swap(lst[gt], lst[eq]);
+            gt -= 1;
+
+        } else if (lst[eq] < pivot_value) {
+            swap(lst[lt], lst[eq]);
+            lt += 1;
+            eq += 1;
+        }
+    }
+
+    return {lt - 1, gt + 1};
+}
+
+void dutchFlagQuickSort(vector<int>& lst, int start_index, int end_index) {
+
+    if (start_index >= end_index) {
+        return;
+    }
+
+    int pivot_index = start_index + rand() % (end_index - start_index + 1);
+    int pivot_value = lst[pivot_index];
+
+    pair<int, int> borders =
+        dutchFlagPartitioning(lst, start_index, end_index, pivot_value);
+
+    int left = borders.first;
+    int right = borders.second;
+
+    dutchFlagQuickSort(lst, start_index, left);
+    dutchFlagQuickSort(lst, right, end_index);
+}
 
 
 

@@ -9,6 +9,7 @@ using namespace std;
 void shellSort(vector<int>& arr);
 void taskOneResult(vector<int>& arr);
 void taskTwoResult(vector<int>& arr);
+void dutchFlagQuickSort(vector<int>& lst, int start_index, int end_index);
 
 void printArray(const vector<int>& arr) {
     for (int num : arr)
@@ -20,7 +21,7 @@ vector<int> testArrayRandom;
 vector<int> testArraySorted;
 
 int main() {
-for (int i = 0; i < 10000; i++) {
+for (int i = 0; i < 20; i++) {
     testArrayRandom.push_back(rand() % 100);
 }
 
@@ -28,16 +29,22 @@ for (int i = 0; i < 10000; i++) {
     testArraySorted.push_back(i);
 }
 
-//    TASK 1
-   taskOneResult(testArraySorted);
+// TASK 1
+//   taskOneResult(testArraySorted);
 
 // TASK 2
     
-  taskTwoResult(testArrayRandom);
+//  taskTwoResult(testArrayRandom);
    
-   
-   
+// TASK 3
+    cout << "Before sort: " << endl;
+    printArray(testArrayRandom);
     
+    dutchFlagQuickSort(testArrayRandom, 0, (testArrayRandom.size() - 1));
+    
+    cout << "After sort: " << endl;
+    
+    printArray(testArrayRandom);
 
     return 0;
 };
